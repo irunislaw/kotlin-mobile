@@ -1,0 +1,183 @@
+{
+  "name": "frame_8",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "6pGwyHlHPN6djIwPngcHiD",
+    "node": "36:5",
+    "version": "2604972205"
+  },
+  "default": "Frame 8",
+  "documentation": "header\n",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Frame 9"
+      },
+      {
+        "type": "group",
+        "id": "svgg"
+      },
+      {
+        "type": "group",
+        "id": "Iconsax/Linear/setting2"
+      },
+      {
+        "type": "vector",
+        "id": "path0"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      }
+    ],
+    "modes": {
+      "Frame 8": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": "16.0",
+              "right": "16.0"
+            },
+            "arrangement": "row",
+            "main-axis-align": "space-between",
+            "children": [
+              "Frame 9",
+              "svgg",
+              "Iconsax/Linear/setting2"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Frame 9",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              }
+            },
+            "is-structured": "false",
+            "background-color": {
+              "alpha": "0.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            }
+          },
+          {
+            "id": "svgg",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "214.0205078125"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "22.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "path0"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Iconsax/Linear/setting2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Vector",
+              "Vector1"
+            ]
+          },
+          {
+            "id": "path0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "path0.svg"
+          },
+          {
+            "id": "Vector",
+            "margin": "9.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Vector1",
+            "margin": {
+              "left": "2.0",
+              "top": "2.56109619140625",
+              "right": "1.989990234375",
+              "bottom": "2.56109619140625"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "vector1.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "Frame 8",
+      "size": {
+        "width": 412.0,
+        "height": 64.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
