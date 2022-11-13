@@ -17,28 +17,40 @@
 package com.example.hellofigma
 
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.example.hellofigma.ui.theme.HelloFigmaTheme
 import com.example.hellofigma.frame8.Frame8
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         setContent {
             HelloFigmaTheme() {
-                Surface(color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier.systemBarsPadding()
+                ) {
                     App()
                 }
 
             }
+
         }
     }
 }
