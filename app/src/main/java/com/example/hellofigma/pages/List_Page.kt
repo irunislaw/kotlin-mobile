@@ -1,7 +1,8 @@
 package com.example.hellofigma.pages
 
 import android.annotation.SuppressLint
-import android.util.Log
+import android.content.Context
+import android.telephony.TelephonyManager
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -21,9 +22,9 @@ import androidx.compose.ui.layout.positionInWindow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.getSystemService
 import com.example.hellofigma.R
 import jp.wasabeef.gap.Gap
-
 
 
 val tab = arrayOf(0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5);
@@ -74,7 +75,7 @@ fun ListPage(
     ) {
         Column(
             modifier = Modifier
-                .padding(26.dp, 80.dp,26.dp,0.dp)
+                .padding(26.dp, 80.dp, 26.dp, 0.dp)
                 .fillMaxHeight()
                 .verticalScroll(rememberScrollState())
 
@@ -90,8 +91,6 @@ fun ListPage(
                             RoundedCornerShape(16.dp)
                         )
                         .size(width = 800.dp, height = 56.dp)
-
-
                 ) {
                     Row(
 
@@ -107,7 +106,7 @@ fun ListPage(
                         Gap(width = 16.dp)
                         Column() {
                             Text(
-                                text = "Name",
+                                text = "name",
                                 style = MaterialTheme.typography.titleMedium
                             )
                             Text(
@@ -187,8 +186,9 @@ fun ListPage(
 @Preview
 @Composable
 fun PreviewListpage() {
-    ListPage(onNavigateToAddDevicePage = {},
-    onNavigateToDevicePage = {},
+    ListPage(
+        onNavigateToAddDevicePage = {},
+        onNavigateToDevicePage = {},
     )
 }
 

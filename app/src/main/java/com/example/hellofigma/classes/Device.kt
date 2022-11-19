@@ -3,7 +3,7 @@ package com.example.hellofigma.classes
 import java.sql.RowId
 
 data class Device(
-    val id: Number,
+    val id: RowId,
     var name: String,
     var phoneNumber: String,
     var Inputs: Array<Input>,
