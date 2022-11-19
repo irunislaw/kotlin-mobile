@@ -1,4 +1,4 @@
-package com.example.hellofigma
+package com.example.hellofigma.auto
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
