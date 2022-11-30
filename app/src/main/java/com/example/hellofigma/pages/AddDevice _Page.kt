@@ -1,7 +1,6 @@
 package com.example.hellofigma.pages
 
 import android.annotation.SuppressLint
-import android.os.Parcelable
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -15,6 +14,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.focus.FocusRequester
@@ -29,20 +29,28 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.hellofigma.R
+import com.example.hellofigma.validation.CustomTextField
+import com.example.hellofigma.validation.InputWrapper
+import com.example.hellofigma.validation.MainState
+import com.example.hellofigma.validation.MainViewModel
 import jp.wasabeef.gap.Gap
 
-
-
-
-
-
-
-
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalMaterial3Api::class)
+@ExperimentalMaterial3Api
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "UnrememberedMutableState")
+@OptIn(
+    ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class,
+    ExperimentalLifecycleComposeApi::class
+)
 @Composable
 fun AddDevicePage(onNavigateToListPage: () -> Unit) {
+
+    val viewModel: MainViewModel = viewModel()
+    val viewState: MainState by viewModel.state.collectAsState()
+
+
     val openDialog = remember { mutableStateOf(false) }
     var isAutoReport by remember { mutableStateOf(false) }
     var Isadvanced by remember { mutableStateOf(false) }
@@ -142,10 +150,10 @@ fun AddDevicePage(onNavigateToListPage: () -> Unit) {
                     .verticalScroll(rememberScrollState())
             ) {
                 OutlinedTextField(
-                    value = name,
+                    value = viewState.deviceName,
                     label = { Text("name") },
                     onValueChange = {
-                        if (it.text.length <= 16) name = it
+                        if (it.length <= 16) viewModel.updatedeviceName(it)
                     },
                     modifier = Modifier
                         .padding(16.dp, 0.dp)
@@ -157,10 +165,10 @@ fun AddDevicePage(onNavigateToListPage: () -> Unit) {
                 Gap(16.dp)
 
                 OutlinedTextField(
-                    value = phonenumber,
+                    value = viewState.devicePhoneNumber,
                     label = { Text("Phone number") },
                     onValueChange = {
-                        if (it.text.length <= 16) phonenumber = it
+                        if (it.length <= 16) viewModel.updatePhoneNumber(it)
                     },
                     modifier = Modifier
                         .padding(16.dp, 0.dp)
@@ -451,12 +459,6 @@ fun AddDevicePage(onNavigateToListPage: () -> Unit) {
     )
 }
 
-@Preview
-@Composable
-fun AddDevicePreview() {
-    AddDevicePage({})
-}
-
 
 fun validateData(
     deviceName: String,
@@ -465,3 +467,4 @@ fun validateData(
     ) {
 
 }
+

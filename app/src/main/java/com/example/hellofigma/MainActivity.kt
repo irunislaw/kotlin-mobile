@@ -42,6 +42,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             HelloFigmaTheme(darkTheme = true) {
+
                 Surface(
                     color = MaterialTheme.colorScheme.background,
                     modifier = Modifier.systemBarsPadding()
