@@ -6,7 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun DevicePage() {
-    Text(text = "siur")
+    Text(text = "device")
 }
 
 @Preview
